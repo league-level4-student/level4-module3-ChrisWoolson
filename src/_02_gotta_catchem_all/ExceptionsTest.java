@@ -29,9 +29,18 @@ class ExceptionsTest {
 	//   two doubles as parameters and returns their quotient as a double. This method 
 	//   should throw an IllegalArgumentException if the denominator is 0.0.
 	
+	
+	
 	//3. Complete the JUnit test method to test the divide method.
 	@Test
 	public void testDivideByZeroException() {
+		try {
+			em.divide(2, 0);
+		fail("IllegalArgumentException");
+		}catch(IllegalArgumentException e) {
+			e.printStackTrace();
+			assertEquals(em.divide(4, 2),2 );
+		}
 		
 	}
 	
@@ -43,6 +52,14 @@ class ExceptionsTest {
 	@Test
 	public void testReverseString() {
 		
+		try {
+		
+		em.reverseString("");
+		fail("IllegalStateException");
+		}catch(IllegalStateException e) {
+			e.printStackTrace();
+			assertEquals(em.reverseString("12"), "21");
+		}
 	}
 	
 	
